@@ -1,0 +1,29 @@
+.slide1 {
+  background-image: url(../images/2-4-1-01.png);
+}
+
+.slide2 {
+  background-image: url(../images/2-4-1-02.png);
+}
+
+.slide3 {
+  background-image: url(../images/2-4-1-03.png);
+}
+
+.slide4 {
+  background-image: url(../images/2-4-1-04.png);
+}
+
+.slide5 {
+  background-image: url(../images/2-4-1-05.png);
+}
+
+.slide {
+  background-size: 640px 360px;
+  background-attachment: cover;
+  text-align: right;
+}
+
+#example1 .innertimeline {
+  background: #aAaAaA;
+}

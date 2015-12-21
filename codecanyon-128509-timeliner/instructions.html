@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Timeliner instructions</title>
+		<link rel="stylesheet" href="css/demo.css">
+	</head>
+	<body>
+		<div id="content">
+			<h1>Timeliner instructions</h1>
+			<a class="h3" href="index.html">Back to the demo</a>
+
+			<div id="right">
+				<h2>Resources:</h2>
+				<ul>
+					<li>Loading gif: <a href="http://www.ajaxload.info/" target="_blank">http://www.ajaxload.info/</a></li>
+					<li>The jQuery library. Source: <a href="http://jquery.com/" target="_blank">http://jquery.com/</a></li>
+					<li>Images by <a href="http://www.frique.me/" target="_blank">Frique</a>.</li>
+				</ul>
+
+				<h2>Support:</h2>
+				<ul>
+					<li><a href="http://codecanyon.net/item/timeliner/faq/128509" target="_blank">Timeliner FAQ on CodeCanyon</a></li>
+					<li><a href="http://codecanyon.net/item/timeliner/discussion/128509" target="_blank">Timeliner feedback/comment page on CodeCanyon</a></li>
+					<li><a href="mailto:please@frique.me">Email: please@frique.me</a></li>
+				</ul>
+			</div>
+
+			<h2>HTML Markup</h2>
+			Create an Unordered List with the &lt;li&gt;s as slides.<br>
+			Optionally add a <i>title</i> attribute as a slide title / a <i>lang</i> attribute as an alternative slide interval.<br>
+			See "setup" below.
+
+			<h2>CSS Settings</h2>
+			<b>timeliner_styling.css</b> contains all the styling with descriptive comments to help you along.
+
+			<h2>JavaScript Settings</h2>
+			When you call the plugin on your list element, you can supply options to overwrite the defaults. See an example under "Setup".<br>
+			The JavaScript source is included and commented for more advanced manipulations.
+			<br><br>
+			<div class="opts">
+				<u>Container:</u><br>
+				<b>containerwidth</b> = Total width (value in pixels) (default = 800)<br>
+				<b>containerheight</b> = Total height (value in pixels) (default 400)<br>
+				<b>showpauseplay</b> = Whether to show the pause/play button when hovering the presentation (true or false) (default = true)<br>
+				<b>showprevnext</b> = Whether to show the previous/next buttons when hovering the presentation (true or false) (default = true)<br>
+				<b>controls_always_visible</b> = Always keep the pause/play/previous/next buttons visible (true or false) (default = false)<br>
+				<u>Timeline:</u><br>
+				<b>timelinewidth</b> = Width of the timeline/progress bar (value in pixels) (default = 720)<br>
+				<b>timelineheight</b> = Height of the timeline/progress bar (value in pixels) (default = 8)<br>
+				<b>timelinehorizontalmargin</b> = Timeline left and right margin ('auto' (center) or number value in pixels) (default = 'auto')<br>
+				<b>timelineverticalmargin</b> = Timeline top and bottom margin (number value in pixels) (default = 30)<br>
+				<b>timelineposition</b> = Position the timeline at the top or bottom of the slide ('top' or 'bottom') (default = bottom)<br>
+				<u>Time display:</u><br>
+				<b>showtimedisplay</b> = Whether to show the time display or not (true or false) (default = true)<br>
+				<b>timedisplayposition</b> = Position the time display above or below the progress bar ('above' or 'below') (default = 'above')<br>
+				<b>showtotaltime</b> = Whether to add the total presentation time after the current playing time (true or false) (default = false)<br>
+				<u>Node tooltip:</u><br>
+				<b>showtooltip</b> = Whether to show the slide title in a tooltip when hovering a node (true or false) (default = true)<br>
+				<b>showtooltiptime</b> = Whether to show the slide start time in a tooltip when hovering a node (true or false) (default = false)<br>
+				<b>tooltipposition</b> = Position the tooltip above or below the progress bar ('above' or 'below') (default = 'above')<br>
+				<u>Playback:</u><br>
+				<b>interval</b> = Time between slides in seconds, except when individually specified in the HTML (default = 10)<br>
+				<b>repeat</b> = Whether to restart the presentation after completing (true or false) (default = true)<br>
+				<b>autoplay</b> = Whether to start the presentation as soon as it loads (true or false) (default = true)<br>
+				<b>keyboard</b> = Whether to use keyboard functionality (true or false) (default = true)<br>
+				<b>transition</b> = Transition type between slides ('fade', 'instant', 'slide' or 'reveal') (default = 'slide')
+			</div>
+
+			<h2>Setup:</h2>
+			<div class="code">
+				&lt;!DOCTYPE HTML&gt;<br>
+				&lt;html&gt;
+				<div class="tab">
+					&lt;head&gt;
+					<div class="tab">
+						<span class="comment">&lt;!-- jQuery library: --&gt;</span><br>
+						&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+						<br><br>
+						<span class="comment">&lt;!-- Timeliner functionality CSS (Must be before the timeliner JavaScript): --&gt;</span><br>
+						&lt;link rel="stylesheet" type="text/css" href="css/timeliner.css"&gt;<br>
+						<span class="comment">&lt;!-- Timeliner styling CSS: --&gt;</span><br>
+						&lt;link rel="stylesheet" type="text/css" href="css/timeliner_styling.css"&gt;<br>
+						<span class="comment">&lt;!-- Timeliner JavaScript: --&gt;</span><br>
+						&lt;script src="js/jquery.timeliner.min.js"&gt;&lt;/script&gt;
+						<br><br>
+						&lt;script&gt;
+						<div class="tab">
+							$(document).ready(function(){<br>
+								<div class="tab">
+									<span class="comment">// Apply the script when the document is ready (minimum):</span><br>
+									$('#element').timeliner();
+									<br><br>
+									<span class="comment">// Or with custom options:</span><br>
+									$('#element').timeliner({
+									<div class="tab">
+										containerwidth: 800,<br>
+										containerheight: 400,<br>
+										showpauseplay: true,<br>
+										timelinewidth: 720,<br>
+										timelineheight: 8,<br>
+										timelinehorizontalmargin: 'auto',<br>
+										timelineverticalmargin: 30,<br>
+										timelineposition: 'bottom',<br>
+										showtimedisplay: true,<br>
+										timedisplayposition: 'above',<br>
+										showtotaltime: false,<br>
+										showtooltip: true,<br>
+										showtooltiptime: false,<br>
+										tooltipposition: 'above',<br>
+										interval: 10,<br>
+										repeat: true,<br>
+										autoplay: true,<br>
+										keyboard: true,<br>
+										transition: 'slide'
+									</div>
+									});
+								</div>
+							});
+						</div>
+						&lt;/script&gt;
+					</div>
+					&lt;/head&gt;<br>
+					&lt;body&gt;
+					<div class="tab">
+						<br>
+						<span class="comment">&lt;!-- HTML list element: --&gt;</span><br>
+						&lt;ul id="<b>your_element_id</b>" class="timeliner"&gt;
+						<div class="tab">
+							<br>
+							<span class="comment">// Minimal setup:</span><br>
+							&lt;li&gt;<b>Your slide content here</b>&lt;/li&gt;
+							<br><br>
+							<span class="comment">// Full setup:</span><br>
+							&lt;li title="<b>This slide's title</b>" lang="<b>(optional individual slide duration in seconds)</b>"&gt;
+							<div class="tab">
+								<b>Your slide content here</b>
+							</div>
+							&lt;/li&gt;
+							<br><br>
+						</div>
+						&lt;/ul&gt;
+						<br><br>
+					</div>
+					&lt;/body&gt;
+				</div>
+				&lt;/html&gt;
+			</div>
+
+			<h2>Advanced: callback functions:</h2>
+			<div class="opts">
+				<b class="th">Function name</b>
+					<span class="th">Description</span><br>
+				<b>start_callback(id)</b>
+					Called when the presentation starts. This will pass the ID of the instance.<br>
+				<b>newslide_callback(id, slide)</b>
+					Called when a new slide is activated. This will pass the ID of the instance and the slide number.<br>
+				<b>end_callback(id)</b>
+					Called when the presentation ends. This will pass the ID of the instance.<br>
+				<b>paused_callback(id, slide)</b>
+					Called when the presentation is paused.<br>
+				<b>resumed_callback(id, slide)</b>
+					Called when the presentation is resumed.<br>
+				<b>click_callback(id, slide)</b>
+					Called when a slide is clicked (do not use if you are also using links in slides).
+			</div>
+			<br>
+			If you create the function outside the document-ready part of your javascript code, it will be called by the plugin when the appropriate event occurs.
+			<br><br>
+			Example:<br>
+			<div class="code">
+				$(document).ready(function(){<br>
+					<div class="tab">
+						$('#element').timeliner();
+					</div>
+				});<br>
+				<span class="comment">// The presentation start callback:</span><br>
+				<b>function start_callback(id){</b>
+					<div class="tab">
+						<span class="comment">// Your custom events here</span><br>
+						alert('Timeliner "'+id+'" started.');
+					</div>
+				<b>}</b>
+			</div>
+			Also view the <a href="index.html">demo page</a> source for working examples.
+			
+		</div>
+
+	</body>
+</html>

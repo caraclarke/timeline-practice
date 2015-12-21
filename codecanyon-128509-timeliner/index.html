@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Timeliner demo</title>
+		<link rel="stylesheet" href="css/demo.css">
+		
+		<!-- INCLUDE TIMELINER CSS: -->
+		<link rel="stylesheet" href="css/timeliner.css">
+		<link rel="stylesheet" href="css/timeliner_styling.css">
+		<link rel="stylesheet" href="css/timeliner_styling_example2.css">
+		<link rel="stylesheet" href="css/timeliner_styling_example3.css">
+		
+		<!-- INCLUDE JQUERY: -->
+		<script src='js/jquery-1.6.2.min.js'></script>
+
+		<!-- INCLUDE TIMELINER PLUGIN: -->
+		<script src='js/jquery.timeliner.min.js'></script>
+
+		<!-- INITIATE TIMELINER PLUGIN: -->
+		<script>
+			$(document).ready(function(){
+
+				// EXAMPLE 1:
+				$('#example1').timeliner();
+
+				// EXAMPLE 2:
+				$('#example2').timeliner({
+					tooltipposition: 'below',
+					timelinewidth: 710,
+					timelineverticalmargin: 35,
+					transition: 'slide'
+				});
+
+				// EXAMPLE 3:
+				$('#example3').timeliner({
+					containerwidth: 600,
+					containerheight: 300,
+					timelinewidth: 550,
+					timelineheight: 3,
+					timelineverticalmargin: 0,
+					autoplay: false,
+					showtooltiptime: true,
+					repeat: false,
+					showtotaltime:true,
+					timedisplayposition: 'below',
+					transition: 'fade'
+				});
+
+			});
+
+			// Callback function examples:
+			function start_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" started');
+				}
+			}
+			function newslide_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" changed to slide '+slide);
+				}
+			}
+			function end_callback(id){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" ended');
+				}
+			}
+			function paused_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" paused at slide '+slide);
+				}
+			}
+			function resumed_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Timeliner "'+id+'" resumed at slide '+slide);
+				}
+			}
+			function click_callback(id, slide){
+				if(id=='example1'){
+					$('#callback_log').html('Clicked on slide '+slide+' of Timeliner "'+id+'"');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<h1>Timeliner demo</h1>
+			<a class="h3" href="instructions.html">Back to the instructions</a>
+
+			<noscript>
+				<div id="noscript">This slideshow needs JavaScript to be switched on in your browser.</div>
+			</noscript>
+
+			<!-- EXAMPLE 1 -->
+			<ul id="example1" class="timeliner">
+				<li title="Slide one" style="background:url(images/slide1.jpg)"></li>
+				<li title="Slide two" lang="5">
+					This is HTML text. It could also be flash, embedded video etc.<br>
+					More examples and technical info below.
+				</li>
+				<li title="Slide three with a long title<br>and a line-break" lang="5">
+					This example will repeat automatically. It can also stop at the last slide if you want it to.
+				</li>
+				<!-- Flash:
+				<li title="Flash example (YouTube embed)" lang="20">
+					<object width="200" height="180">
+						<param name="wmode" value="opaque"></param>
+						<param name="movie" value="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0"></param>
+						<param name="allowfullscreen" value="true"></param>
+						<param name="allowscriptaccess" value="always"></param>
+						<embed src="http://www.youtube.com/v/wgQNx_aRZgk?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="200" height="180" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+					</object>
+				</li>
+				-->
+			</ul>
+			<!-- END EXAMPLE 1 -->
+
+			<br>
+			<div>Example 1 callbacks: <span id="callback_log">Nothing happened yet.</span></div>
+
+			<div id="right">
+				<h2>What's this?</h2>
+				A timed slideshow presentation. Or a jQuery plugin that enables you to easily create one.
+				<br><br>
+				Including the plugin on your page will turn a &lt;ul&gt; list into a slideshow with the &lt;li&gt;s as slides (see a markup example below). Then style it by CSS -with or without images- and customize the behaviour using the plugin options.
+
+				<h2>Requirements</h2>
+				jQuery library version 1.3.0+<br>
+				Note that IE9 is fully supported since version 1.5.2.
+			</div>
+
+			<h2>Features</h2>
+			<ul>
+				<li>Very customizable by CSS & plugin options</li>
+				<li>Use any type of html / media types inside the slides</li>
+				<li>Use a global or individual slide interval</li>
+				<li>Optionaly show / hide most of the features</li>
+				<li>4 transition types (fade, slide, reveal, instant)</li>
+				<li>Compatible with all common browsers, even IE6</li>
+				<li>Multiple instances on the same page possible</li>
+				<li>Optional autoplay</li>
+				<li>Optional custom callback functions for most events</li>
+			</ul>
+			<ul>
+				<li>User can click a node to start the associated slide</li>
+				<li>User can click the timeline to start the associated slide</li>
+				<li>User can pause/resume the presentation</li>
+				<li>Keyboard functionality (space = pause/play)</li>
+			</ul>
+			
+			Detailed instructions available in the download package.
+
+			<h2>Markup:</h2>
+			<div class="code">
+				&lt;ul id="<b>your_element_id</b>" class="timeliner"&gt;
+				<div class="tab">
+					<br>
+					<span class="comment">// Minimal setup:</span><br>
+					&lt;li&gt;<b>Your slide content here</b>&lt;/li&gt;
+					<br><br>
+					<span class="comment">// Full setup:</span><br>
+					&lt;li title="<b>This slide's title</b>" lang="<b>(induvidual slide duration in seconds)</b>"&gt;
+					<div class="tab">
+						<b>Your slide content here</b>
+					</div>
+					&lt;/li&gt;
+					<br><br>
+				</div>
+				&lt;/ul&gt;
+			</div>
+
+			<h2>New in version 1.2 (2011 july 25):</h2>
+			<ul>
+				<li>Callback function "start_callback" triggers when the presentation starts;</li>
+				<li>Callback function "newslide_callback" triggers when a new slide is activated;</li>
+				<li>Callback function "end_callback" triggers when the presentation ends;</li>
+				<li>Callback function "paused_callback" triggers when the presentation is paused;</li>
+				<li>Callback function "resumed_callback" triggers when the presentation resumes;</li>
+				<li>
+					Callback function "click_callback" triggers when a slide is clicked;<br>
+					<i>Note: Instructions on using callback functions included in the download package.</i>
+				</li>
+				<li>New plugin option "controls_always_visible" causes the pause/play/previous/next buttons to never hide.</li>
+			</ul>
+
+			<h2>New in version 1.1 (2011 june 20):</h2>
+			<ul>
+				<li>Changed behaviour: When clicking a node with autoplay off, it now starts paused on that node.</li>
+				<li>Slight performance tweaks.</li>
+				<li>jquery.timeliner_min.js renamed to jquery.timeliner.min.js</li>
+			</ul>
+			<br><br>
+
+			<!-- EXAMPLE 2 -->
+			<ul id="example2" class="timeliner">
+				<li title="Slide one">1</li>
+				<li title="Slide two">2</li>
+				<li title="Slide three">3</li>
+			</ul>
+			<!-- END EXAMPLE 2 -->
+
+			<div style="float:right; width:170px">
+				External controls for the example on the left.<br>
+				<button onclick="$('#element3').timeliner.pauseplay()">Pause / play toggle</button><br>
+				<button onclick="$('#element3').timeliner.pause()">Pause</button><br>
+				<button onclick="$('#element3').timeliner.play()">Play</button><br>
+				<button onclick="$('#element3').timeliner.next()">Next slide</button><br>
+				<button onclick="$('#element3').timeliner.prev()">Previous slide</button>
+			</div>
+
+			<!-- EXAMPLE 3 -->
+			<ul id="example3" class="timeliner">
+				<li title="Intro slide" lang="10">
+					This one doesn't autoplay.<br>
+					The buttons on the right have functions in the <i>onclick=""</i> attribute to control this example.
+					<br><br>
+					Other differences in this example:
+					<ul>
+						<li>Different dimensions</li>
+						<li>Shows the total time</li>
+						<li>Shows the slide start time in the node tooltip</li>
+						<li>Individual intervals</li>
+						<li>Timeline positioning / width / height</li>
+						<li>Images used as nodes</li>
+						<li>Various CSS styling</li>
+					</ul>
+				</li>
+				<li title="Get ready" lang="1">
+					Ending in...3
+				</li>
+				<li title="Close to the end" lang="1">
+					Ending in...2
+				</li>
+				<li title="Almost ending" lang="1">
+					Ending in...1
+				</li>
+				<li title="The end">
+					The end.
+				</li>
+			</ul>
+			<!-- END EXAMPLE 3 -->
+
+			<div id="footer">
+				Timeliner is exclusively available at <a href="http://codecanyon.net/item/timeliner/128509">CodeCanyon</a>.
+			</div>
+		</div>
+
+	</body>
+</html>
