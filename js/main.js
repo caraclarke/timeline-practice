@@ -11,11 +11,10 @@ $('#example1').timeliner({
       showtimedisplay: false,
       timedisplayposition: 'above',
       showtotaltime: false,
-      showtooltip: true,
+      showtooltip: false,
       showtooltiptime: false,
-      tooltipposition: 'above',
       interval: 10,
-      repeat: true,
+      repeat: false,
       autoplay: false,
       keyboard: true,
       transition: 'slide'

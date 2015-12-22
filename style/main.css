@@ -1,21 +1,31 @@
 .slide1 {
-  background: url(../images/2-4-1-01.png) no-repeat fixed;
+  background: url(../images/2-4-1-01.png);
+  background: url(../images/2-4-1-01.svg) no-repeat fixed,
+    linear-gradient(transparent, transparent);
 }
 
 .slide2 {
-  background: url(../images/2-4-1-02.png) no-repeat fixed;
+  background: url(../images/2-4-1-02.png);
+  background: url(../images/2-4-1-02.svg) no-repeat fixed,
+    linear-gradient(transparent, transparent);
 }
 
 .slide3 {
-  background: url(../images/2-4-1-03.png) no-repeat fixed;
+  background: url(../images/2-4-1-03.png);
+  background: url(../images/2-4-1-03.svg) no-repeat fixed,
+    linear-gradient(transparent, transparent);
 }
 
 .slide4 {
-  background: url(../images/2-4-1-04.png) no-repeat fixed;
+  background: url(../images/2-4-1-04.png);
+  background: url(../images/2-4-1-04.svg) no-repeat fixed,
+    linear-gradient(transparent, transparent);
 }
 
 .slide5 {
-  background: url(../images/2-4-1-05.png) no-repeat fixed;
+  background: url(../images/2-4-1-05.png);
+  background: url(../images/2-4-1-05.svg) no-repeat fixed,
+    linear-gradient(transparent, transparent);
 }
 
 .slide {
