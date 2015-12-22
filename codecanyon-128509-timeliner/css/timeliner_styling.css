@@ -29,10 +29,11 @@
 }
 /* Each node */
 #example1 .node{
-	width:26px;
-	height:26px;
+	width:16px;
+	height:16px;
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
+	-ms-border-radius: 50%;
 	border-radius: 50%;
 	background: #CACACA;
 	border: 3px #aAaAaA;
@@ -43,6 +44,7 @@
   background: #A6CE38;
   -webkit-border-radius:50%;
 	-moz-border-radius:50%;
+	-ms-border-radius: 50%;
   border-radius: 50%;
   border: 3px #A6CE38;
   border-style: solid;

@@ -1,58 +1,27 @@
-/*.slide1 {
-  background: url(../images/2-4-1-01.png) no-repeat center center cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.slide1 {
+  background: url(../images/2-4-1-01.png) no-repeat fixed;
 }
 
 .slide2 {
-  background-image: url(../images/2-4-1-02.png);
+  background: url(../images/2-4-1-02.png) no-repeat fixed;
 }
 
 .slide3 {
-  background-image: url(../images/2-4-1-03.png);
+  background: url(../images/2-4-1-03.png) no-repeat fixed;
 }
 
 .slide4 {
-  background-image: url(../images/2-4-1-04.png);
+  background: url(../images/2-4-1-04.png) no-repeat fixed;
 }
 
 .slide5 {
-  background-image: url(../images/2-4-1-05.png);
-}*/
-
-.slide {
-  /*background-size: 640px 360px;*/
-  /*background-repeat: no-repeat;*/
-  text-align: right;
-  /*height: 360px;*/
-  /*width: 640px;*/
+  background: url(../images/2-4-1-05.png) no-repeat fixed;
 }
 
-.slide img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-  height: 360px;
-  width: 640px;
+.slide {
+  text-align: right;
 }
 
 #example1 .innertimeline {
   background: #aAaAaA;
 }
-
-/*.slide {
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-}*/

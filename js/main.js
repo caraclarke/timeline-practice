@@ -1,7 +1,7 @@
 $(document).ready(function(){
 $('#example1').timeliner({
-      containerwidth: 640,
-      containerheight: 360,
+      containerwidth: 940,
+      containerheight: 530,
       showpauseplay: true,
       timelinewidth: 600,
       timelineheight: 8,
