@@ -1,4 +1,4 @@
-.slide1 {
+/*.slide1 {
   background: url(../images/2-4-1-01.png) no-repeat fixed;
 }
 
@@ -16,7 +16,7 @@
 
 .slide5 {
   background: url(../images/2-4-1-05.png) no-repeat fixed;
-}
+}*/
 
 .slide {
   text-align: right;
@@ -24,4 +24,21 @@
 
 #example1 .innertimeline {
   background: #aAaAaA;
+}
+
+.image {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.slide p {
+  z-index: 2;
+  position: relative;
 }
