@@ -1,5 +1,9 @@
-.slide1 {
-  background-image: url(../images/2-4-1-01.png);
+/*.slide1 {
+  background: url(../images/2-4-1-01.png) no-repeat center center cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .slide2 {
@@ -16,14 +20,39 @@
 
 .slide5 {
   background-image: url(../images/2-4-1-05.png);
-}
+}*/
 
 .slide {
-  background-size: 640px 360px;
-  background-attachment: cover;
+  /*background-size: 640px 360px;*/
+  /*background-repeat: no-repeat;*/
   text-align: right;
+  /*height: 360px;*/
+  /*width: 640px;*/
+}
+
+.slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  height: 360px;
+  width: 640px;
 }
 
 #example1 .innertimeline {
   background: #aAaAaA;
 }
+
+/*.slide {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}*/
