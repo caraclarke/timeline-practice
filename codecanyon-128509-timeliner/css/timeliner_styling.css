@@ -31,15 +31,21 @@
 #example1 .node{
 	width:26px;
 	height:26px;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
 	border-radius: 50%;
 	background: #CACACA;
-	border: 3px solid #aAaAaA;
+	border: 3px #aAaAaA;
+	border-style: solid;
 }
 /* The active node */
 #example1 .node_active{
   background: #A6CE38;
+  -webkit-border-radius:50%;
+	-moz-border-radius:50%;
   border-radius: 50%;
-  border: 3px solid #A6CE38;
+  border: 3px #A6CE38;
+  border-style: solid;
 }
 /* Each node tooltip */
 #example1 .tooltip{
